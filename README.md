@@ -1,4 +1,4 @@
 # Droplet microfluidics based combinatorial indexing for massive-scale 5′-end single-cell RNA sequencing
   Single-cell RNA sequencing methods focus on the 5’-end of transcripts can reveal promoter and enhancer activity and allows efficient profiling of immune receptor repertoire. However, ultra-high-throughput 5′-end single-cell RNA sequencing methods have not been described. Here, we introduce five-prime end single-cell combinatorial indexing RNA-Seq (FIPRESCI), enabling the massive sample multiplexing and increasing the throughput of the droplet-microfluidics system by over 10-fold. FIPRESCI is based on combining the ability of indexed Tn5 transposome to barcoding RNA/cDNA hybrids heteroduplexes in situ and Template Switching Oligo barcoding of commercial droplet-microfluidic.
-   Here are scripts to analysis FIPERSCI data
+   Here are scripts to analyze FIPERSCI data
 ![image](https://user-images.githubusercontent.com/47652056/219993512-9f4913b2-c108-4411-9b2f-3cfb45ef6d07.png)
