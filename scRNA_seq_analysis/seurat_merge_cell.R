@@ -1,0 +1,25 @@
+##merge cell by seurat and add round1 index in 10X_barcode to get combined cell barcode (round1 barcode + 10X barcode) 
+library(Matrix)
+library(dplyr)
+library(Seurat)
+library(patchwork)
+index=read.table("~/round1.txt")
+index=as.matrix(index)
+index=as.vector(index)
+print(index)
+length=length(index)
+datalist=list()
+for (i in 1:length)
+{   print(i)
+    path=paste0("~/Cellranger/",index[i],"/",index[i],"/outs/filtered_feature_bc_matrix")
+    print(path)
+    datalist[[i]]= Read10X(data.dir = path)
+    datalist[[i]]=CreateSeuratObject(counts = datalist[[i]], min.cells = 0, min.features = 0)
+}
+data=c(datalist[[1]])
+for (i in 2:length)
+{
+    data[i]=datalist[[i]]
+}
+merged_data=merge(x=datalist[[1]],y=data[2:length],add.cell.ids=index)
+saveRDS(merged_data,file="merged_gene_mat.rds")
